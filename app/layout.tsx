@@ -4,6 +4,10 @@ import { Providers } from "./providers";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 
+import { Inter } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"] });
+
 export const metadata: Metadata = {
   title: "Triplora - Your Travel Partner",
   description: "Discover amazing places with Triplora at exclusive deals",
@@ -23,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="antialiased">
+      <body className={`${inter.className} antialiased`} suppressHydrationWarning>
         <Providers>
           {children}
           <Toaster />
